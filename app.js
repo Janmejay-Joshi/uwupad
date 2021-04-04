@@ -49,6 +49,7 @@
 function converter(language, content) {
     let newSentence = document.getElementById("input").value;
     styler = document.getElementById("output").style;
+    styler.fontSize = "30px";
 
     switch (language) {
         case "pig-latin":
@@ -57,7 +58,6 @@ function converter(language, content) {
             break;
         case "morse":
             styler.fontFamily = "Fialla One";
-            styler.fontSize = "30px";
             return morse(newSentence);
             break;
         case "uwu":
