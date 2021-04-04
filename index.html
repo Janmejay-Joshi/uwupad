@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>uwupad</title>
+        <link
+            rel="shortcut icon"
+            href="./assets/favicon.ico"
+            type="image/x-icon"
+        />
+        <link
+            rel="stylesheet"
+            href="style.css"
+            type="text/css"
+            charset="utf-8"
+        />
+    </head>
+    <body>
+        <nav class="navbar">
+            <select name="language" id="language" class="dropdown">
+                <option value="uwu">UwU</option>
+                <option value="pig-latin">Pig Latin</option>
+                <option value="morse">Morse</option>
+                <option value="upsidedown">ɥsᴉlƃuƎ</option>
+            </select>
+            <p class="directions">
+                select an language from the dropdown above to convert your
+                useless text into
+            </p>
+        </nav>
+        <main>
+            <div class="container">
+                <img
+                    class="logo"
+                    src="./assets/images/uwu.jpg"
+                    id="logo"
+                    alt="uwu"
+                />
+                <p class="summary" id="summary">
+                    Uwu is an analytic contour tone language with a very small
+                    phonetic inventory. Its native speakers are communes of
+                    catgirls who have left behind their physical forms to ascend
+                    to a higher plane of existence and live exclusively on the
+                    internet.
+                </p>
+            </div>
+            <hr />
+            <div class="container">
+                <textarea
+                    autofocus
+                    name="input"
+                    id="input"
+                    class="text-area"
+                    placeholder="Express your Thoughts Here"
+                >
+Express your Thoughts Here</textarea
+                >
+
+                <textarea
+                    name="output"
+                    id="output"
+                    class="text-area"
+                ></textarea>
+            </div>
+            <script src="app.js" charset="utf-8"></script>
+        </main>
+    </body>
+</html>

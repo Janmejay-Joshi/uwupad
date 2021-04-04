@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Londrina+Solid:wght@900&family=New+Tegomin&family=Roboto:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'UpsideDown';
+  src: url('./assets/fonts/UpsideDown.ttf')  format('truetype');
+}
+
+:root {
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 16px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    margin-left: 10rem;
+    padding: 1rem;
+    width 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.navbar {
+    position: fixed;
+    background-color: #000;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 10rem;
+    
+}
+
+.text-area {
+  flex: 1;
+  height: 60vh;
+  font-size: 20px;
+  background: #eee;
+  padding: 2rem;
+  border: 5px solid white;
+  font-weight: bold;
+}
+
+.dropdown {
+    height: 8vh;
+    font-size: 30px;
+    font-weight: bold;
+    outline: none;
+    background-color: #eee;
+}
+
+.logo {
+    margin-left: 1rem;
+    height: 15vh;
+}
+.summary {
+    font-weight: bolder;
+    padding: 1rem;
+    width: 60%;
+    margin-left: 2rem;
+}
+
+.directions {
+    padding: 1rem;
+}
