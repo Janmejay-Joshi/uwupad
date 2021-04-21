@@ -9,6 +9,8 @@ An Translator to comunicate with those who have left behind their physical forms
 * Pig-Latin ( Igpay-Atinlay )
 * Morse Code
 * Australian English
+* Barcode
+* Cursive Extreme
 
 ## Setup
 Run index.html inside your browser
