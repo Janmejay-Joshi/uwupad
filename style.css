@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Londrina+Solid:wght@900&family=New+Tegomin&family=Roboto:wght@400;500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
+
+
+@font-face {
+    font-family: 'BarcodeText';
+  src: url('./assets/fonts/LibreBarcode128Text-Regular.ttf')  format('truetype');
+}
+
 @font-face {
   font-family: 'UpsideDown';
   src: url('./assets/fonts/UpsideDown.ttf')  format('truetype');
 }
 
 :root {
-    background: #FFFFFF;
     color: #000000;
     font-size: 16px;
 }
@@ -26,7 +33,7 @@ body {
 
 .navbar {
     position: fixed;
-    background-color: #000;
+    background: linear-gradient(#111111, #222222);
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -42,20 +49,19 @@ body {
   background: #eee;
   padding: 2rem;
   border: 5px solid white;
-  font-weight: bold;
 }
 
 .dropdown {
+    background-color: #ddd;
     height: 8vh;
     font-size: 30px;
     font-weight: bold;
-    outline: none;
-    background-color: #eee;
 }
 
 .logo {
     margin-left: 1rem;
     height: 15vh;
+    outline: solid thin;
 }
 .summary {
     font-weight: bolder;

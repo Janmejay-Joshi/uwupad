@@ -40,8 +40,18 @@
                 document.getElementById("summary").innerHTML =
                     "Australian English (AuE, AuEng) is the set of varieties of the English language native to Australia. Australian English is the country's national and de facto common language.";
                 break;
-
-            default:
+            case "barcode":
+                document.getElementById("logo").src =
+                    "./assets/images/barcode.jpg";
+                document.getElementById("summary").innerHTML =
+                    "A barcode or bar code is a method of representing data in a visual, machine-readable form. Initially, barcodes represented data by varying the widths and spacings of parallel lines. ";
+                break;
+            case "cursive":
+                document.getElementById("logo").src =
+                    "./assets/images/cursive.jpg";
+                document.getElementById("summary").innerHTML =
+                    "Cursive is any style of penmanship in which some characters are written joined together in a flowing manner, generally for the purpose of making writing faster, in contrast to block letters. Cursive handwriting is very functional, and is intended to be used in everyday writing.";
+                break;
         }
     })
 );
@@ -49,7 +59,7 @@
 function converter(language, content) {
     let newSentence = document.getElementById("input").value;
     styler = document.getElementById("output").style;
-    styler.fontSize = "30px";
+    styler.fontSize = "35px";
 
     switch (language) {
         case "pig-latin":
@@ -68,6 +78,16 @@ function converter(language, content) {
             styler.fontFamily = "UpsideDown";
             return newSentence;
             break;
+        case "barcode":
+            styler.fontFamily = "BarcodeText";
+            styler.fontSize = "50px";
+    styler.fontWeight = "400";
+            return newSentence;
+            break;
+        case "cursive":
+            styler.fontFamily = "Ballet";
+    styler.fontWeight = "400";
+            return newSentence;
         default:
             return newSentence;
     }
@@ -173,14 +193,14 @@ function uwu(sentence) {
     let i = 0;
     words.forEach((word) => {
         letters = word.split("");
-        morseMap = {
+        uwuMap = {
             l: "w",
             r: "w",
             n: "nw",
         };
         let j = 0;
         letters.forEach((letter) => {
-            for (const [key, value] of Object.entries(morseMap)) {
+            for (const [key, value] of Object.entries(uwuMap)) {
                 if (letter === key) {
                     letters[j] = value;
                     break;
