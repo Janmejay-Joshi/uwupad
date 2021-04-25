@@ -1,54 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Londrina+Solid:wght@900&family=New+Tegomin&family=Roboto:wght@400;500&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Londrina+Solid:wght@900&family=New+Tegomin&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ballet&display=swap");
 
 @font-face {
-    font-family: 'BarcodeText';
-  src: url('./assets/fonts/LibreBarcode128Text-Regular.ttf')  format('truetype');
+    font-family: "BarcodeText";
+    src: url("./assets/fonts/LibreBarcode128Text-Regular.ttf")
+        format("truetype");
 }
-
 @font-face {
-  font-family: 'UpsideDown';
-  src: url('./assets/fonts/UpsideDown.ttf')  format('truetype');
+    font-family: "UpsideDown";
+    src: url("./assets/fonts/UpsideDown.ttf") format("truetype");
 }
 
 :root {
     color: #000000;
     font-size: 16px;
+  --transition-speed: 100ms;
 }
 
 body {
     padding: 0;
     margin: 0;
 }
+
 .container {
-    margin-left: 10rem;
+    margin-left: 5rem;
     padding: 1rem;
-    width 100%;
     display: flex;
     flex-wrap: wrap;
-
 }
+
+/* *NavBar* */
 
 .navbar {
     position: fixed;
+  transition: width 600ms ease;
     background: linear-gradient(#111111, #222222);
-    color: #FFFFFF;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 10rem;
-    
 }
 
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.sm-logo {
+      font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+
+.navbar a:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: #222;
+}
+
+.navbar span {
+    display: none;
+    margin-left: 1rem;
+}
+.navbar svg {
+  width: 3rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+/**/
+
 .text-area {
-  flex: 1;
-  height: 60vh;
-  font-size: 20px;
-  background: #eee;
-  padding: 2rem;
-  border: 5px solid white;
+    flex: 1;
+    height: 60vh;
+    font-size: 20px;
+    background: #eee;
+    padding: 2rem;
+    border: 5px solid white;
 }
 
 .dropdown {
@@ -71,5 +120,60 @@ body {
 }
 
 .directions {
+    display: none;
     padding: 1rem;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .sm-logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    .container {
+        margin: 0;
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover span{
+        display: inline;
+    }
+
+    .navbar:hover .directions{
+        display: block;
+    }
+
+    .navbar:hover .logo svg {
+        margin-left: 11rem;
+    }
+
+    .navbar:hover .logo-text {
+        left: 0px;
+    }
 }
