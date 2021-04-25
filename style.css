@@ -14,16 +14,29 @@
 :root {
     color: #000000;
     font-size: 16px;
-  --transition-speed: 100ms;
+  --transition-speed: 400ms;
+  --background-color-D: linear-gradient(45deg,#222222,#444444);
+  --background-color-L: #FFFFFF;
 }
 
 body {
+    background: var(--background-color-L);
     padding: 0;
     margin: 0;
 }
 
 .container {
+    font-size: 20px;
     margin-left: 5rem;
+    padding: 1rem;
+    background: var(--background-color-D);
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+.text-container {
+    margin-left: 5rem;
+    background: var(--background-color-L);
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -33,7 +46,7 @@ body {
 
 .navbar {
     position: fixed;
-  transition: width 600ms ease;
+  transition: width var(--transition-speed) ease;
     background: linear-gradient(#111111, #222222);
     color: #ffffff;
     display: flex;
@@ -71,7 +84,6 @@ body {
     color: var(--text-primary);
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
-    transition: var(--transition-speed);
 }
 
 .navbar a:hover {
@@ -95,9 +107,9 @@ body {
     flex: 1;
     height: 60vh;
     font-size: 20px;
-    background: #eee;
+    background: #dddddd;
     padding: 2rem;
-    border: 5px solid white;
+    border: 5px solid var(--background-color-L);
 }
 
 .dropdown {
@@ -111,6 +123,7 @@ body {
     margin-left: 1rem;
     height: 15vh;
     outline: solid thin;
+    outline-color: #000;
 }
 .summary {
     font-weight: bolder;
@@ -129,11 +142,10 @@ body {
     .navbar {
         bottom: 0;
         width: 100vw;
-        height: 5rem;
+        height: 2rem;
     }
 
     .sm-logo {
-        display: none;
     }
 
     .navbar-nav {
@@ -143,9 +155,20 @@ body {
     .nav-link {
         justify-content: center;
     }
+    .summary {
+        width: 100%;
+    }
 
     .container {
         margin: 0;
+        width: 100%;
+    }
+
+    .text-container {
+        margin: 0;
+        flex-direction: column;
+        width: 90%;
+        min-height: 300px;
     }
 }
 
@@ -169,8 +192,8 @@ body {
         display: block;
     }
 
-    .navbar:hover .logo svg {
-        margin-left: 11rem;
+    .navbar:hover .sm-logo svg {
+        margin-left: auto;
     }
 
     .navbar:hover .logo-text {
